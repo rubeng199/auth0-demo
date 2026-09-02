@@ -42,8 +42,11 @@ the backend is an **API** (audience identifier).
 - **Roles arrive via a post-login Action.** `org_id` is included in tokens by default; roles
   are not. A post-login Action copies them into a namespaced claim, which the
   `JwtAuthenticationConverter` in `SecurityConfig` maps to `ROLE_*` authorities.
-- **Storage is in-memory.** `ProjectRepository` can be swapped for Spring Data JPA without
-  affecting the layers above it.
+- **Storage is in-memory and resets when the API restarts.** There is no database. The demo
+  exists to show the auth model, not CRUD or persistence, so `ProjectRepository` just holds a
+  map seeded at startup. Projects created during a session survive switching organizations,
+  but not a restart. Swapping the repository for Spring Data JPA would not affect the layers
+  above it.
 
 ## Prerequisites
 
