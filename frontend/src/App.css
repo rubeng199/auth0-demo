@@ -1,0 +1,200 @@
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: light-dark(#f6f7f9, #16181d);
+  color: light-dark(#1b1e24, #e6e8ec);
+}
+
+#root {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid light-dark(#e0e3e8, #2c3038);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: light-dark(#5b616e, #9aa1ae);
+  margin: 0 0 0.75rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+section {
+  background: light-dark(#ffffff, #1e2128);
+  border: 1px solid light-dark(#e0e3e8, #2c3038);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+button {
+  font: inherit;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.4rem;
+  border: 1px solid light-dark(#c9ced8, #3a3f4a);
+  background: light-dark(#ffffff, #262a33);
+  color: inherit;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: light-dark(#8b93a3, #555c6a);
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.9;
+}
+
+button.danger {
+  border-color: transparent;
+  color: light-dark(#b4232a, #ff8f92);
+  background: transparent;
+}
+
+/* Org switcher */
+.org-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.org-switcher .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: light-dark(#5b616e, #9aa1ae);
+  margin-right: 0.25rem;
+}
+
+.org-tab.active {
+  background: light-dark(#1b1e24, #e6e8ec);
+  color: light-dark(#ffffff, #16181d);
+  border-color: transparent;
+}
+
+/* Projects */
+.projects ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.projects li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid light-dark(#eef0f3, #262a33);
+}
+
+.create {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.create input {
+  font: inherit;
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.4rem;
+  border: 1px solid light-dark(#c9ced8, #3a3f4a);
+  background: light-dark(#ffffff, #262a33);
+  color: inherit;
+}
+
+/* Claims panel */
+.claims dl {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.claims dt {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.8rem;
+  color: light-dark(#5b616e, #9aa1ae);
+}
+
+.claims dd {
+  margin: 0;
+}
+
+code {
+  font-size: 0.82rem;
+  background: light-dark(#f1f3f6, #262a33);
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  margin-right: 0.35rem;
+  border-radius: 999px;
+  background: light-dark(#e4ecfb, #223052);
+  color: light-dark(#1e4fa8, #a8c6ff);
+}
+
+/* Landing */
+.landing {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.landing-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Utilities */
+.muted {
+  color: light-dark(#5b616e, #9aa1ae);
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.centered {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.error {
+  color: light-dark(#b4232a, #ff8f92);
+  background: light-dark(#fdeceb, #3a1f21);
+  border-radius: 0.4rem;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+}

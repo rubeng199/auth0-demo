@@ -1,0 +1,28 @@
+# Copy to application.yml and fill in from your Auth0 dashboard (see README.md).
+# application.yml is gitignored so tenant-specific values stay out of version control.
+
+spring:
+  application:
+    name: teamboard-api
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          # Trailing slash matters: this must equal the "iss" claim Auth0 puts in the token.
+          issuer-uri: https://YOUR_TENANT.us.auth0.com/
+          # The API "Identifier" from the Auth0 dashboard.
+          audiences:
+            - https://teamboard-api
+
+teamboard:
+  # Must match the namespace used by the post-login Action (see README.md).
+  claim-namespace: https://teamboard.demo
+  # Organizations this API will serve. Tokens carrying any other org_id are rejected.
+  allowed-org-ids:
+    - org_YOUR_FIRST_ORG_ID
+    - org_YOUR_SECOND_ORG_ID
+  cors-origin: http://localhost:5173
+
+logging:
+  level:
+    org.springframework.security: INFO

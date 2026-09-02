@@ -1,0 +1,12 @@
+# Repo-wide only. Build output and per-project ignores live in backend/.gitignore
+# and frontend/.gitignore, which ship with the Spring Initializr and Vite templates.
+
+# Tenant-specific config — copy the committed .example files and fill these in
+backend/src/main/resources/application.yml
+frontend/.env.local
+.env
+
+# IDE and OS files at the repo root, which the nested ignores do not cover
+.idea/
+.vscode/
+.DS_Store

@@ -1,0 +1,17 @@
+# Deterministic values for tests. No network access happens: the JwtDecoder is replaced with a
+# mock, and tests inject authentication directly via spring-security-test's jwt() post-processor.
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://test-tenant.example.com/
+          audiences:
+            - https://teamboard-api
+
+teamboard:
+  claim-namespace: https://teamboard.demo
+  allowed-org-ids:
+    - org_acme_test
+    - org_globex_test
+  cors-origin: http://localhost:5173

@@ -1,0 +1,6 @@
+/* Minimal reset. Component styling lives in App.css. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
